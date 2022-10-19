@@ -17,8 +17,8 @@ class PermissionsSeeder extends Seeder
     {
         if (Schema::hasTable('permissions') && DB::table('permissions')->count() == 0) {
             $permissions = [
-                ['name' => 'view_admin_dashboard', 'title' => 'View Admin Dashboard'],
-                ['name' => 'view_user_dashboard', 'title' => 'View User Dashboard'],
+                ['name' => 'view_admin_dashboard', 'title' => 'View Admin Dashboard', 'description' => 'View Admin Dashboard'],
+                ['name' => 'view_user_dashboard', 'title' => 'View User Dashboard', 'description' => 'View User Dashboard'],
             ];
             DB::table('permissions')
                 ->insert($permissions);
