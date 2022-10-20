@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->post('/login', [AuthController::class, 'login']);
 Route::middleware('guest')->post('/register', [AuthController::class, 'register']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::get('/user', function (Request $request) {
+        $user = $request->user();
+        return response()->json([
+            'status' => true,
+            'data' => $user,
+            'message' => 'LoggedIn user.'
+        ]);
+    });
+
+    Route::get('/books', [BookController::class, 'index']);
 });
