@@ -40,9 +40,11 @@ class AuthController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Registration Successful',
-            'token' => $user->createToken('Application')->plainTextToken,
-            'permissions' => $user->user_permissions(),
-            'name' => $user->name
+            "data" => [
+                'token' => $user->createToken('Application')->plainTextToken,
+                'permissions' => $user->user_permissions(),
+                'name' => $user->name
+            ],
         ]);
     }
 
@@ -74,9 +76,11 @@ class AuthController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Login Successful',
-            'token' => $user->createToken('Application')->plainTextToken,
-            'permissions' => $user->user_permissions(),
-            'name' => $user->name
+            "data" => [
+                'token' => $user->createToken('Application')->plainTextToken,
+                'permissions' => $user->user_permissions(),
+                'name' => $user->name
+            ],
         ]);
     }
 }
