@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 
     Route::get('/books', [BookController::class, 'index']);
+    Route::get('/books/popular', [BookController::class, 'popular_books']);
     Route::get('/book/{id}/view', [BookController::class, 'show']);
     Route::post('/book/save', [BookController::class, 'save']);
     Route::post('/book/update', [BookController::class, 'update']);
@@ -49,4 +50,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/me/book/manage-favourites',[UserBookController::class,'manageFavouritesBooks']);
     Route::post('/me/book/manage-likes',[UserBookController::class,'manageLikesBooks']);
     Route::post('/me/book/manage-comments',[UserBookController::class,'manageCommentsBooks']);
+
+    
+    Route::post('/logout',[AuthController::class,'logout']);
 });

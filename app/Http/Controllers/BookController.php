@@ -17,6 +17,16 @@ class BookController extends Controller
         ]);
     }
 
+    public function popular_books() {
+        return response()->json([
+            'status' => true,
+            'data' => Book::withCount('user_books_likes')
+                        ->orderBy('user_books_likes_count', 'DESC')->paginate(10),
+            'message' => 'Popular Books'
+        ]);
+        
+    }
+
     public function show($id) {
         $book = Book::find($id);
 

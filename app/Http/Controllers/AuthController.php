@@ -83,4 +83,21 @@ class AuthController extends Controller
             ],
         ]);
     }
+
+    public function logout() {
+        $removed_tokens = Auth::user()->tokens()->delete();
+
+        if ($removed_tokens) {
+            return response()->json([
+                'status' => true,
+                'data' => [],
+                'message' => "You have been logged out successfully."
+            ]);
+        }
+        return response()->json([
+            'status' => false,
+            'data' => [],
+            'message' => "Failed to log out."
+        ], 500);
+    }
 }

@@ -343,5 +343,29 @@ Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
     "comment": "This is a very good book. I urge users to read it. It is going to help them a lot"
 }
 
+### @name USER_ADD_LIKE_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-likes
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|3QpD1iuT95pn3fhrAqZ7Pif6UWNehTd006oEfQrH
 
+{
+    "book_id" : 4859,
+    "like": true
+}
 
+### @name POPULAR_BOOKS
+GET http://127.0.0.1:8000/api/books/popular
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|3QpD1iuT95pn3fhrAqZ7Pif6UWNehTd006oEfQrH
+
+{}
+
+### @name LOG_USER_OUT
+POST http://127.0.0.1:8000/api/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|3QpD1iuT95pn3fhrAqZ7Pif6UWNehTd006oEfQrH
+
+{}
