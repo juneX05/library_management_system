@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserBookController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -43,4 +44,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/user/{id}/books/comments', [UserController::class, 'getUserBooksComments']);
     Route::post('/user/update', [UserController::class, 'update']);
     Route::post('/user/remove', [UserController::class, 'remove']);
+
+    Route::get('/me/books',[UserBookController::class,'index']);
+    Route::post('/me/book/manage-favourites',[UserBookController::class,'manageFavouritesBooks']);
+    Route::post('/me/book/manage-likes',[UserBookController::class,'manageLikesBooks']);
+    Route::post('/me/book/manage-comments',[UserBookController::class,'manageCommentsBooks']);
 });

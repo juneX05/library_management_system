@@ -269,5 +269,79 @@ Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
     "id" : 1
 }
 
+### @name USER_VIEW_BOOKS
+GET http://127.0.0.1:8000/api/me/books
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name USER_ADD_FAVORUTIE_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-favourites
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "book_id" : 4855,
+    "favourite": true
+}
+
+### @name FAIL_1_USER_ADD_FAVORUTIE_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-favourites
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "book_id" : 5001,
+    "favourite": true
+}
+
+### @name FAIL_2_USER_ADD_FAVORUTIE_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-favourites
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "book_id" : 5000,
+    "favourite": "true"
+}
+
+### @name USER_REMOVE_FAVORUTIE_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-favourites
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "book_id" : 4855,
+    "favourite": false
+}
+
+### @name FAIL_1_USER_REMOVE_FAVORUTIE_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-favourites
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "book_id" : 5002,
+    "favourite": false
+}
+
+### @name ADD_USER_COMMENT_ON_BOOK
+POST http://127.0.0.1:8000/api/me/book/manage-comments
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "book_id" : 5000,
+    "comment": "This is a very good book. I urge users to read it. It is going to help them a lot"
+}
+
 
 

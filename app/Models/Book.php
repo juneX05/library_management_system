@@ -21,4 +21,16 @@ class Book extends Model
     public function book_statuses() {
         return $this->hasMany(BookStatus::class);
     }
+
+    public function user_books_likes() {
+        return $this->hasMany(UserBooksLike::class);
+    }
+
+    public function user_books_comments() {
+        return $this->hasMany(UserBooksComment::class);
+    }
+
+    public function user_books_favourites() {
+        return $this->hasMany(UserBooksFavourite::class);
+    }
 }
