@@ -60,4 +60,102 @@ Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 1|JtEKoKj54DLvDQINtdIiZZcFijCsmjVxGxNL920k
 
+### @name SUCCESSFULLY_ADD_BOOK
+POST http://127.0.0.1:8000/api/book/save
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "isbn" : "1911129209078",
+    "title": "The hunter, the child and the Fox",
+    "publisher": "Global Publishers",
+    "number_of_pages": 98
+}
+
+### @name FAILURE_ADDING_BOOK
+POST http://127.0.0.1:8000/api/book/save
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "isbn" : "1911129209078",
+    "title": "The hunter, the child and the Fox",
+    "publisher": "Global Publishers"
+}
+
+### @name GET_EXISTING_BOOK
+GET http://127.0.0.1:8000/api/book/5001/view
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name GET_NON_EXISTING_BOOK
+GET http://127.0.0.1:8000/api/book/50001/view
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name SUCCESSFULL_UPDATE_BOOK
+POST http://127.0.0.1:8000/api/book/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id": 5001,
+    "isbn" : "1911129209078-1",
+    "title": "The hunter, the child, the Frog and the Fox",
+    "publisher": "Global Publishers",
+    "number_of_pages": 100
+}
+
+### @name FAILURE_UPDATE_BOOK
+POST http://127.0.0.1:8000/api/book/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id": 50015,
+    "isbn" : "1911129209078-1",
+    "title": "The hunter, the child, the Frog and the Fox",
+    "publisher": "Global Publishers",
+    "number_of_pages": 100
+}
+
+### @name DELETE_BOOK
+POST http://127.0.0.1:8000/api/book/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id": 5001
+}
+
+### @name FAILURE_1_DELETE_BOOK
+POST http://127.0.0.1:8000/api/book/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name FAILURE_2_DELETE_BOOK
+POST http://127.0.0.1:8000/api/book/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id": 45205
+}
+
+
 

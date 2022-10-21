@@ -30,4 +30,8 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 
     Route::get('/books', [BookController::class, 'index']);
+    Route::get('/book/{id}/view', [BookController::class, 'show']);
+    Route::post('/book/save', [BookController::class, 'save']);
+    Route::post('/book/update', [BookController::class, 'update']);
+    Route::post('/book/remove', [BookController::class, 'remove']);
 });
