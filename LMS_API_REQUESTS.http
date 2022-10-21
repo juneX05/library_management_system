@@ -157,5 +157,117 @@ Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
     "id": 45205
 }
 
+### @name ALL_USERS
+GET http://127.0.0.1:8000/api/users
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name GET_USER
+GET http://127.0.0.1:8000/api/user/2/view
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name GET_USER_FAVORITE_BOOKS
+GET http://127.0.0.1:8000/api/user/2/books/favourites
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name GET_USER_LIKED_BOOKS
+GET http://127.0.0.1:8000/api/user/2/books/likes
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name GET_USER_COMMENTED_BOOKS
+GET http://127.0.0.1:8000/api/user/2/books/comments
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name UPDATE_USER
+POST http://127.0.0.1:8000/api/user/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id" : 2,
+    "name": "Normal User 1",
+    "email": "normaluser@gmail.com"
+}
+
+### @name FAILED_UPDATE_USER
+POST http://127.0.0.1:8000/api/user/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id" : 10,
+    "name": "Normal User 1",
+    "email": "normaluser@gmail.com"
+}
+
+### @name REMOVE_USER
+POST http://127.0.0.1:8000/api/user/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id" : 10
+}
+
+### @name REMOVE_USER
+POST http://127.0.0.1:8000/api/user/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id" : 2
+}
+
+### @name FAILED_1_REMOVE_USER
+POST http://127.0.0.1:8000/api/user/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id" : 20
+}
+
+### @name FAILED_2_REMOVE_USER
+POST http://127.0.0.1:8000/api/user/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{}
+
+### @name FAILED_3_REMOVE_USER
+POST http://127.0.0.1:8000/api/user/remove
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|cwrTDC2cnkYTqDjaCGKAzShkRBwya56WyYzqzvNw
+
+{
+    "id" : 1
+}
+
 
 
